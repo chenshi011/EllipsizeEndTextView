@@ -84,6 +84,12 @@ public class EllipsizeEndTextView extends TextView {
         super.onDraw(canvas);
     }
 
+     @Override
+    protected void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        isStale = true;
+    }
+    
     private void resetText() {
         int maxLines = getMaxLineCount(); 
         if (maxLines == -1) {
